@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-principal: #173540;
+    --second-color:#161F30;
+    --color-txt: #B8860B;
+
+
+}
+
+
+body {
+    
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+    color: var(--color-txt);
+
+}
+
+
+.container-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.container-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ul { list-style: none; padding-left: 5px; }
+
+
+
+ul { list-style: none; padding-left: 5px; }
+a { color:var(--color-txt); text-decoration: none;}
+.bar {
+    background-color: var(--color-principal);
+    padding:15px;
+    border-top: solid 1px #cdcdcd;
+    border-bottom: solid 1px #cdcdcd;
+}
+.header {
+    background: #161F30;
+    background: linear-gradient(90deg,rgba(22, 31, 48, 1) 0%, rgba(24, 44, 71, 1) 40%, rgba(9, 63, 66, 0.71) 100%);
+    height: 100px;;
+}
+
+.logo {
+    
+    height: 100px;;
+    width: 200px;
+    margin: 00px;
+}
+main{
+   padding: 5%;
+}
+.content {
+    max-width: 1440px;
+    margin: auto;
+    grid-gap: 3rem;
+    display: grid;
+    gap: 3rem;
+    grid-template-areas: "sidebar main anchors";
+    grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.footer {
+    min-height: 100px;
+    border-top: solid 1px #cdcdcd;
+}
+.anchors {
+    border-left: solid 1px #cdcdcd;
+    padding-left: 15px;
+}
+.sidebar {
+    border-right: solid 1px #cdcdcd;
+}
+figure {
+    text-align: center;
+    
+}
+
+h1, h2, h3, .stat-number {
+            font-family: 'Teko', sans-serif;
+            font-weight: 600;
+        }
+        .sortable:hover {
+            cursor: pointer;
+            background-color: var(--second-color); /* slate-200 */
+        }
+        .sort-asc::after {
+            content: ' ▲';
+            font-size: 0.8em;
+            
+        }
+        .sort-desc::after {
+            content: ' ▼';
+            font-size: 0.8em;
+            
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 500px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
