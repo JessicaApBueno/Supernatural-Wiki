@@ -3,71 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supernatural Wiki- Análise das Temporadas</title>
+    <title>Supernatural Wiki - Análise das Temporadas</title>
     <link rel="icon" href="./imagens/Gemini_Generated_Image_av8fe9av8fe9av8f.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
     <style>
-   
         
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif; 
+        }
+
+        h1, h2, h3 {
+            font-family: 'Teko', sans-serif; 
+        }
+
+       
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1f2937; /* gray-800 */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* gray-600 */
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* gray-500 */
+        }
+
+       
+        .sortable {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .sortable.asc::after {
+            content: ' ▲';
+            position: absolute;
+            right: 10px;
+            font-size: 0.8em;
+        }
+
+        .sortable.desc::after {
+            content: ' ▼';
+            position: absolute;
+            right: 10px;
+            font-size: 0.8em;
+        }
+
+       
+        .chart-container {
+            position: relative;
+            height: 40vh; 
+            width: 100%;
+        }
+
+        @media (min-width: 768px) { 
+            .chart-container {
+                height: 50vh;
+            }
+        }
+        @media (min-width: 1024px) { 
+            .chart-container {
+                height: 60vh;
+            }
+        }
     </style>
 </head>
-<body class="text-slate-800 bg-gray-900 ">
+<body class="bg-gray-900 text-slate-200">
 
-    <body class="container mx-auto p-4 sm:p-6 lg:p-8">
-        
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
         <header class="text-center mb-8">
-            <h1 class="text-5xl md:text-7xl font-bold  tracking-wide text-gray-400">SUPERNATURAL</h1>
-            <p class="text-xl md:text-2xl font-light text-gray-400 ">Uma Análise Interativa das Temporadas</p>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-wide text-amber-500">SUPERNATURAL</h1>
+            <p class="text-xl md:text-2xl font-light text-slate-300">Uma Análise Interativa das Temporadas</p>
         </header>
 
         <main>
-            
             <section id="stats" class="mb-10">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div class="bg-emerald-100 p-6 rounded-lg shadow-md border-l-4 border-amber-500">
-                        <h3 class="text-xl text-gray-400 text-slate-500">Total de Temporadas</h3>
-                        <p id="total-seasons" class="stat-number text-5xl text-slate-900 text-gray-400">0</p>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-amber-500">
+                        <h3 class="text-xl text-slate-400 mb-2">Total de Temporadas</h3>
+                        <p id="total-seasons" class="text-5xl font-bold text-emerald-400">0</p>
                     </div>
-                    <div class="bg-emerald-100 p-6 rounded-lg shadow-md border-l-4 border-amber-500">
-                        <h3 class="text-xl text-gray-400 text-slate-500">Total de Episódios</h3>
-                        <p id="total-episodes" class="stat-number text-5xl text-gray-400 text-slate-900">0</p>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-amber-500">
+                        <h3 class="text-xl text-slate-400 mb-2">Total de Episódios</h3>
+                        <p id="total-episodes" class="text-5xl font-bold text-emerald-400">0</p>
                     </div>
-                    <div class="bg-emerald-100  p-6 rounded-lg shadow-md border-l-4 border-amber-500">
-                        <h3 class="text-xl text-slate-500 text-gray-400">Anos no Ar</h3>
-                        <p id="years-on-air" class="stat-number text-5xl text-slate-900 text-gray-400">0</p>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-amber-500">
+                        <h3 class="text-xl text-slate-400 mb-2">Anos no Ar</h3>
+                        <p id="years-on-air" class="text-5xl font-bold text-emerald-400">0</p>
                     </div>
-                    <div class="bg-emerald-100  p-6 rounded-lg shadow-md border-l-4 border-amber-500 text-gray-400">
-                        <h3 class="text-xl text-slate-500 text-gray-400">Emissoras</h3>
-                        <p id="networks" class="stat-number text-5xl text-slate-900 text-gray-400">0</p>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-amber-500">
+                        <h3 class="text-xl text-slate-400 mb-2">Emissoras</h3>
+                        <p id="networks" class="text-5xl font-bold text-emerald-400">0</p>
                     </div>
                 </div>
             </section>
 
-            <
-            <section id="chart-section" class="bg-emerald-100  mb-10  p-4 sm:p-6 rounded-lg shadow-md">
-                <div class="text-center mb-4">
-                    <h2 class="text-3xl md:text-4xl text-slate-900">Episódios por Temporada</h2>
-                    <p class="text-slate-600">Esta visualização compara o número de episódios em cada temporada da série. Passe o mouse sobre as barras para ver os valores exatos.</p>
+            <section id="chart-section" class="bg-gray-800 mb-10 p-4 sm:p-6 rounded-lg shadow-md">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl md:text-4xl text-amber-500 mb-2">Episódios por Temporada</h2>
+                    <p class="text-slate-400 text-lg">Esta visualização compara o número de episódios em cada temporada da série. Passe o mouse sobre as barras para ver os valores exatos.</p>
                 </div>
                 <div class="chart-container">
                     <canvas id="episodesChart"></canvas>
                 </div>
             </section>
 
-            
-            <section id="data-table-section" class="bg-emerald-100  p-4 sm:p-6 rounded-lg shadow-md">
-                 <div class="text-center mb-4">
-                    <h2 class="text-3xl md:text-4xl text-slate-900">Tabela de Temporadas</h2>
-                    <p class="text-slate-600">Explore os dados detalhados de cada temporada. Clique nos cabeçalhos das colunas para ordenar as informações.</p>
+            <section id="data-table-section" class="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md">
+                <div class="text-center mb-6">
+                    <h2 class="text-3xl md:text-4xl text-amber-500 mb-2">Tabela de Temporadas</h2>
+                    <p class="text-slate-400 text-lg">Explore os dados detalhados de cada temporada. Clique nos cabeçalhos das colunas para ordenar as informações.</p>
                 </div>
-                <div class="overflow-x-auto">
+                <div class="overflow-x-auto rounded-lg shadow-inner">
                     <table class="min-w-full text-left text-sm font-light">
-                        <thead class="border-b font-medium bg-slate-100">
+                        <thead class="border-b border-gray-700 font-medium bg-gray-700 text-slate-100">
                             <tr>
                                 <th scope="col" class="px-6 py-4 sortable" data-sort="temporada">Temporada</th>
                                 <th scope="col" class="px-6 py-4 sortable" data-sort="episodios">Episódios</th>
@@ -77,18 +143,18 @@
                                 <th scope="col" class="px-6 py-4 sortable" data-sort="emissora">Emissora</th>
                             </tr>
                         </thead>
-                        <tbody id="seasons-table-body">
-                            <!-- Linhas da tabela serão inseridas aqui via JavaScript -->
-                        </tbody>
+                        <tbody id="seasons-table-body" class="bg-gray-800 text-slate-300 divide-y divide-gray-700">
+                            </tbody>
                     </table>
                 </div>
             </section>
         </main>
         <script src="./script.js"></script>
-        </body>
-        
-        <footer class="text-center mt-10 text-slate-500 text-lg bg-gray-800 font-semibold">
-            <p>Desenvolvido por Jessica Bueno @2025</p>
-    </footer>
- 
     </div>
+
+    <footer class="text-center mt-10 py-6 text-slate-500 text-sm bg-gray-950 font-semibold shadow-inner">
+        <p>Desenvolvido por Jessica Bueno @2025</p>
+    </footer>
+
+</body>
+</html>

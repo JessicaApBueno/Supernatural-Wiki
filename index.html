@@ -5,162 +5,179 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supernatural Wiki</title>
-     <link rel="icon" href="./imagens/Gemini_Generated_Image_av8fe9av8fe9av8f.png" type="image/x-icon">
-    <link rel="stylesheet" href="./styke.css">
-     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./imagens/Gemini_Generated_Image_av8fe9av8fe9av8f.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        .container-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; 
+        }
+
+        .container-video video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; 
+        }
+        
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1f2937; /* gray-800 */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* gray-600 */
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* gray-500 */
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-900 text-white font-sans antialiased">
 
-    <header class="header">   
-        <figure class="logo">
-            <img class="logo" src="./imagens/Gemini_Generated_Image_av8fe9av8fe9av8f.png" width="200"/>
-        </figure>
-        
-    </header>
-    
-
-    
-    <div class="bar">
-        
+    <div class="container-video">
+        <video loop autoplay muted>
+            <source src="./vídeos/vecteezy_billowing-ground-fog-swirls-loop_10803802.mp4" type="video/mp4">
+        </video>
     </div>
 
-        
+    <header class="relative z-10 p-4 bg-gray-950 shadow-lg flex justify-center md:justify-start">
+        <figure class="flex items-center">
+            <img class="w-32 md:w-48" src="./imagens/Gemini_Generated_Image_av8fe9av8fe9av8f.png" alt="Logo Supernatural Wiki"/>
+        </figure>
+    </header>
 
-        </div>
-    <div class="content">
-        <div class="sidebar">
-            <h2>Supernatural</h2>
-            <ul>
-                <li><a href="./Temporadas.html">Temporadas</a></li>
-                
-            </ul>
-        </div>
+    <div class="relative z-10 container mx-auto p-4 md:p-6 lg:p-8 flex flex-col lg:flex-row gap-6">
+        <aside class="lg:w-1/4 bg-gray-800 rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-white">Supernatural</h2>
+            <nav>
+                <ul class="space-y-2">
+                    <li><a href="./Temporadas.html" class="text-blue-400 hover:text-blue-200 transition duration-300 ease-in-out">Temporadas</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-        <main  class="bg-gray-900 font-semibold text-white ">
-            <h1 class="text-xl text-center font-bold text-white">Supernatural (série de televisão)</h1><br>
-            <hr /><br>
-            <h3 id="sobre" class="text-xl text-center font-bold text-white">Sobre</h3><br>
-            <p>
+        <main class="lg:w-3/4 bg-gray-800 rounded-lg shadow-lg p-6">
+            <h1 class="text-3xl text-center font-bold text-white mb-4">Supernatural (série de televisão)</h1>
+            <hr class="border-gray-700 mb-6" />
+
+            <h3 id="sobre" class="text-2xl text-center font-bold text-white mb-4">Sobre</h3>
+            <p class="text-lg leading-relaxed mb-6">
                 Supernatural (bra/prt: Sobrenatural) é uma série de televisão estadunidense de fantasia sombria e urbana criada por Eric Kripke, produzida pela Warner Bros. Television em parceria com a Wonderland Sound and Vision, que estreou em 13 de setembro de 2005 no canal The WB, e depois tornou-se parte da programação do canal The CW, sendo finalizada em 19 de novembro de 2020.[2] A série narra a história de dois irmãos, Sam e Dean Winchester, interpretados respectivamente por Jared Padalecki e Jensen Ackles, que caçam demônios, fantasmas, monstros, vampiros e outras criaturas sobrenaturais no mundo.
             </p>
-            <br>
-            <hr /><br>
-            <h3 id="elenco"  class="text-xl text-center font-bold text-white">Elenco Principal</h3>
+            <hr class="border-gray-700 mb-6" />
 
-            <div class="bg-gray-900 flex justify-center items-center min-h-screen p-4">
-                <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6 max-w-7xl mx-auto">
-       
-        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-            <img src="./imagens/Jared_Padalecki_March_2023.jpg" alt="Jared Padalecki" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-700">
-            <div class="p-5 text-center">
-                <h3 class="text-xl font-semibold text-white mb-2">Jared Padalecki</h3>
-                <p class="text-gray-400 text-sm">Sam Winchester</p>
+            <h3 id="elenco" class="text-2xl text-center font-bold text-white mb-6">Elenco Principal</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="./imagens/Jared_Padalecki_March_2023.jpg" alt="Jared Padalecki" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-600">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-2">Jared Padalecki</h3>
+                        <p class="text-gray-300 text-sm">Sam Winchester</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="./imagens/Misha_Collins_&_Jensen_Ackles_(48478258422)_(cropped).jpg" alt="Jensen Ackles" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-600">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-2">Jensen Ackles</h3>
+                        <p class="text-gray-300 text-sm">Dean Winchester</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="./imagens/Misha_Collins_(48478243687)_(cropped) (1).jpg" alt="Misha Collins" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-600">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-2">Misha Collins</h3>
+                        <p class="text-gray-300 text-sm">Castiel</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="./imagens/Mark_Sheppard_(54103647172).jpg" alt="Mark Sheppard" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-600">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-2">Mark Sheppard</h3>
+                        <p class="text-gray-300 text-sm">Crowley</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="./imagens/Jefrey Dean Morgan.webp" alt="Jeffrey Dean Morgan" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-600">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-2">Jeffrey Dean Morgan</h3>
+                        <p class="text-gray-300 text-sm">John Winchester</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-700 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="./imagens/Ruth.jpeg" alt="Ruth Connell" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-600">
+                    <div class="p-5 text-center">
+                        <h3 class="text-xl font-semibold text-white mb-2">Ruth Connell</h3>
+                        <p class="text-gray-300 text-sm">Rowena MacLeod</p>
+                    </div>
+                </div>
             </div>
-        </div>
+            <hr class="border-gray-700 my-6" />
 
-       
-        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-             <img src="./imagens/Misha_Collins_&_Jensen_Ackles_(48478258422)_(cropped).jpg" alt="Jaesen Ackles" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-700">
-                <div class="p-5 text-center">
-                <h3 class="text-xl font-semibold text-white mb-2">Jensen Ackles</h3>
-                <p class="text-gray-400 text-sm">Dean Winchester</p>
+            <h1 class="text-3xl text-center font-bold text-white mb-6">Paródias by The Hillywood Show®</h1>
+            <hr class="border-gray-700 mb-6" />
+            <div id="parodias" class="flex flex-col items-center space-y-6">
+                <div class="relative w-full overflow-hidden rounded-lg shadow-lg" style="padding-top: 56.25%;">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/fD3t2X5bX9M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="relative w-full overflow-hidden rounded-lg shadow-lg" style="padding-top: 56.25%;">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/tM0Qx8f7cCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
-        </div>
+            <hr class="border-gray-700 my-6" />
 
-       
-        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-            <img src="./imagens/Misha_Collins_(48478243687)_(cropped) (1).jpg" alt="Misha Collins" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-700">
-            <div class="p-5 text-center">
-                <h3 class="text-xl font-semibold text-white mb-2">Misha Collins</h3>
-                <p class="text-gray-400 text-sm">Castiel</p>
+            <div>
+                <h1 class="text-3xl text-center font-bold text-white mb-4" id="impala">Impala 67</h1>
+                <p class="text-lg text-center font-semibold text-gray-300 mb-6">O Impala 67 preto, carinhosamente conhecido como "Baby" pelos irmãos Winchester, é muito mais do que um simples carro em Supernatural; ele é praticamente um personagem principal.</p>
+                <figure class="flex items-center justify-center mb-6">
+                    <img src="./imagens/impala67.webp" alt="Impala 67" class="max-w-full h-auto rounded-lg shadow-lg"/>
+                </figure>
+                <div>
+                    <h2 class="text-2xl text-center font-bold text-white mb-4">Importância na Série:</h2>
+                    <p class="text-lg text-center font-semibold text-gray-300 mb-6">O carro foi um presente do pai deles, John Winchester, para Dean. Ele representa a herança da família Winchester e a vida que eles levam como caçadores. É um elo constante com seu passado e com a missão que lhes foi dada.</p>
+                </div>
             </div>
-        </div>
+        </main>
 
-        
-        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-            <img src="./imagens/Mark_Sheppard_(54103647172).jpg" alt="Mark Sheppard" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-700">
-            <div class="p-5 text-center">
-                <h3 class="text-xl font-semibold text-white mb-2">Mark Sheppard</h3>
-                <p class="text-gray-400 text-sm">Crowley</p>
-            </div>
-        </div>
-
-       
-        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-            <img src="./imagens/Jefrey Dean Morgan.webp" alt="Jefrey Dean Morgan" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-700">
-            <div class="p-5 text-center">
-                <h3 class="text-xl font-semibold text-white mb-2">Jeffrey Dean Morga </h3>
-                <p class="text-gray-400 text-sm">John Winchester</p>
-            </div>
-        </div>
-
-        
-        <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-            <img src="./imagens/Ruth.jpeg" alt="Ruth Connell" class="w-full h-64 object-cover rounded-t-lg border-b border-gray-700">
-            <div class="p-5 text-center">
-                <h3 class="text-xl font-semibold text-white mb-2">Ruth Connell</h3>
-                <p class="text-gray-400 text-sm">Rowena MacLeod</p>
-            </div>
-        </div>
-        <hr />
-    </div>
-    <div>
-
-    </div>
-        <hr />
-        </div>
-         <h1 class="text-xl text-center font-bold text-white"> Parodias by The Hillywood Show® </h1><br>
-            <hr /><br>
-        <div id="parodias">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/JrbOXGUYL6M?si=nxXO0k2-WrCmr2R_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-            
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Nsy06n-omrg?si=CtO2rie9YA_wYVng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <br>
-            <hr />
-            <br>
-             <div>
-    <h1 class="text-xl text-center font-bold text-white" id="impala"> Impala 67</h1><br>
-    <p class="text-lg text-center font-semibold text-white mb-2">O Impala 67 preto, carinhosamente conhecido como "Baby" pelos irmãos Winchester, é muito mais do que um simples carro em Supernatural; ele é praticamente um personagem principal.</p> <br>
-    <figure class="flex items-center justify-center">
-        <img src="./imagens/impala67.webp"/>
-    </figure>
-    <div>
-        
-        <h2 class="text-xl text-center font-bold text-white">Importância na Série:</h2><br>
-        <p class="text-lg text-center font-semibold text-white mb-2">O carro foi um presente do pai deles, John Winchester, para Dean. Ele representa a herança da família Winchester e a vida que eles levam como caçadores. É um elo constante com seu passado e com a missão que lhes foi dada.</p>
-
-    </div>
-
-            </main>
-
-                
-          
-               
-
-        <div class="anchors">
-            <h2>Neste Artigo</h2>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#elenco">Elenco Principal</a></li>
-                <li><a href="#parodias">Parodias</a></li>
-                <li><a href="#impala">Impala 67</a></li>
-            </ul>
-        </div>
+        <aside class="lg:w-1/4 bg-gray-800 rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4 text-white">Neste Artigo</h2>
+            <nav>
+                <ul class="space-y-2">
+                    <li><a href="#sobre" class="text-blue-400 hover:text-blue-200 transition duration-300 ease-in-out">Sobre</a></li>
+                    <li><a href="#elenco" class="text-blue-400 hover:text-blue-200 transition duration-300 ease-in-out">Elenco Principal</a></li>
+                    <li><a href="#parodias" class="text-blue-400 hover:text-blue-200 transition duration-300 ease-in-out">Parodias</a></li>
+                    <li><a href="#impala" class="text-blue-400 hover:text-blue-200 transition duration-300 ease-in-out">Impala 67</a></li>
+                </ul>
+            </nav>
+        </aside>
     </div>
 
-
-    </div>
-   
-   
-    <div class="container-video">
-  <video loop autoplay muted>
-      <source src="./vídeos/vecteezy_billowing-ground-fog-swirls-loop_10803802.mp4" type="video/mp4">
-  </video>
-  </div>
-  
-</body>
- <footer class="text-center mt-10 text-slate-500 text-lg bg-gray-800 font-semibold">
-            <p>Desenvolvido por Jessica Bueno @2025</p>
+    <footer class="relative z-10 text-center py-6 mt-10 text-slate-400 text-sm bg-gray-950 shadow-inner">
+        <p>Desenvolvido por Jessica Bueno @2025</p>
     </footer>
- 
+
+</body>
 </html>
